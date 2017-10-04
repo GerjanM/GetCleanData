@@ -22,8 +22,6 @@ GDPdf<-read.csv("GDP.csv",skip=4)
 fileurl2<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
 download.file(fileurl2,"EDstat.csv")
 EDstatdf<-read.csv("EDstat.csv")
-merge<-merge(GDPdf,EDstatdf,by.x = "X",by.y = "CountryCode",all=TRUE)
-a%>%select(CountryCode,X.1)%>%arrange(desc(X.1))
 
 GDPdf2<-GDPdf%>%
   rename(CountryCode=X,Rank=X.1,Country=X.3)%>%
